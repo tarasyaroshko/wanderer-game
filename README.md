@@ -5,20 +5,18 @@ There is also one friend that may have something to offer you (Student).
 
 There are 3 lives available before each game, so there is an option to lose 2 fights.
 
-Available commands:
-<code>
-talk - You will be able to see some message from the character in this room
+Available commands: <br/>
+<code>talk - talk with a character by checking his message for you</code>
 
-fight - fight with the character in this place
+<code>fight - fight with the character in this place</code>
 
-take - take an item from the place
+<code>take - take an item from the place</code>
 
-backpack - check what you already have in your backpack
+<code>backpack - check what you already have in your backpack</code>
 
-trade - trade with a Friend by exchanging one item for another
+<code>trade - trade with a Friend by exchanging one item for another</code>
 
-help - check the instructions for the whole game
-</code>
+<code>help - check the instructions for the whole game</code>
 
 
 <h3>Examples</h3>
