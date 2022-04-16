@@ -1,6 +1,6 @@
 class Street:
     """
-    Room class
+    Street class
     """
     def __init__(self, name) -> None:
         """
@@ -13,61 +13,59 @@ class Street:
 
     def set_description(self, description):
         """
-        Set the description of the room
+        Set the description of the street
         """
         self.description = description
 
     def set_item(self, item):
         """
-        Place an item in the room
+        Put an item on the street
         """
         self.item = item
 
     def set_character(self, character):
         """
-        Place a character in the room
+        Place a character on the street
         """
         self.character = character
 
     def get_character(self):
         """
-        Return the room's character
+        Return the place's character
         """
         return self.character
 
     def get_item(self):
         """
-        Return the room's item
+        Return the place's item
         """
         return self.item
 
     def link_room(self, room, direction):
         """
-        Link room to another room in a given direction
+        Link street to another street under a given number
         """
         self.linked_rooms[direction] = room
 
     def get_details(self):
         """
-        Get details of the room
+        Get details of the place
         """
-        print("\n")
         print(self.name)
         print("-" * 20)
         print(self.description)
-        print("\n")
-        print("From here you can go to:")
+        print("\nFrom here you can go to:")
         for i in self.linked_rooms:
             if self.linked_rooms[i] != None:
                 print(f'{i} - {self.linked_rooms[i].name}')
-        if self.character != None:
-            print(f'{self.character.name} is here!')
-        if self.item != None:
-            print(f'The [{self.item.name}] is here!')
+        # if self.character != None:
+        #     print(f'{self.character.name} is here!')
+        # if self.item != None:
+        #     print(f'The [{self.item.name}] is here!')
 
     def move(self, direction):
         """
-        Move to another room in a given direction
+        Move to another place using a given number
         """
         if self.linked_rooms[direction] != None:
             return self.linked_rooms[direction]
@@ -94,7 +92,7 @@ class Item:
         """
         Print the description of the item
         """
-        print(f"The {self.name} is here! - {self.description}")
+        print(f"The [{self.name}] is here! - {self.description}")
 
     def get_name(self):
         """
@@ -170,8 +168,18 @@ class Friend(Character):
     """
     Character -> Friend class
     """
-    def __init__(self, name, description, gift) -> None:
+    def __init__(self, name, description) -> None:
         super().__init__(name, description)
-        self.gift = gift
-    def gift(self):
-        return self.gift
+    def set_trade(self, item):
+        self.trade = item
+    def trade_item(self):
+        return self.trade
+    def set_weakness(self, item):
+        self.weakness = item
+
+class Boss(Character):
+    def __init__(self, name, description) -> None:
+        super().__init__(name, description)
+    def set_weakness1(self, weakness1, weakness2):
+        self.weakness1 = weakness1
+        self.weakness2 = weakness2
